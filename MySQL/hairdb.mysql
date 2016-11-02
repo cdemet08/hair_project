@@ -1,0 +1,94 @@
+CREATE SCHEMA `hairdb` ;
+
+
+
+CREATE TABLE `hairdb`.`User` (
+  `idUser` INT NOT NULL AUTO_INCREMENT COMMENT '',
+  `email` NVARCHAR(45) NOT NULL COMMENT '',
+  `name` NVARCHAR(45) NOT NULL COMMENT '',
+  `lastname` NVARCHAR(45) NOT NULL COMMENT '',
+  `phone` INT NOT NULL COMMENT '',
+  `age` INT NOT NULL COMMENT '',
+  `male` BINARY(1) NOT NULL COMMENT '',
+  `adminuser` BINARY(1) NOT NULL COMMENT '',
+  PRIMARY KEY (`idUser`)  COMMENT '',
+  UNIQUE INDEX `idUser_UNIQUE` (`idUser` ASC)  COMMENT '',
+  UNIQUE INDEX `email_UNIQUE` (`email` ASC)  COMMENT '');
+
+
+
+  CREATE TABLE `hairdb`.`Appointment` (
+  `idAppointment` INT NOT NULL AUTO_INCREMENT COMMENT '',
+  `date` DATETIME NULL COMMENT '',
+  PRIMARY KEY (`idAppointment`)  COMMENT '',
+  UNIQUE INDEX `idAppointment_UNIQUE` (`idAppointment` ASC)  COMMENT '');
+
+ALTER TABLE `hairdb`.`Appointment` 
+CHANGE COLUMN `date` `date` DATETIME NOT NULL COMMENT '' ;
+
+ALTER TABLE `hairdb`.`Appointment` 
+ADD COLUMN `idUser` INT(11) NOT NULL COMMENT '' AFTER `date`;
+
+ALTER TABLE `hairdb`.`Appointment` 
+ADD COLUMN `idBarber` INT(11) NOT NULL COMMENT '' AFTER `idUser`;
+
+
+ALTER TABLE `hairdb`.`Appointment` 
+ADD INDEX `fk_Appointment_id_idx` (`idUser` ASC)  COMMENT '';
+ALTER TABLE `hairdb`.`Appointment` 
+ADD CONSTRAINT `fk_Appointment_id`
+  FOREIGN KEY (`idUser`)
+  REFERENCES `hairdb`.`User` (`idUser`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;
+
+
+CREATE TABLE `hairdb`.`Barber` (
+  `idBarber` INT NOT NULL AUTO_INCREMENT COMMENT '',
+  `name` VARCHAR(45) NOT NULL COMMENT '',
+  `lastname` VARCHAR(45) NOT NULL COMMENT '',
+  `phone` INT(11) NOT NULL COMMENT '',
+  `email` VARCHAR(45) NOT NULL COMMENT '',
+  `male` VARCHAR(45) NOT NULL COMMENT '',
+  `age` VARCHAR(45) NOT NULL COMMENT '',
+  PRIMARY KEY (`idBarber`)  COMMENT '');
+
+ALTER TABLE `hairdb`.`Appointment` 
+DROP FOREIGN KEY `fk_Appointment_id`;
+ALTER TABLE `hairdb`.`Appointment` 
+ADD INDEX `fk_Appointment_idBarber_idx` (`idBarber` ASC)  COMMENT '';
+ALTER TABLE `hairdb`.`Appointment` 
+ADD CONSTRAINT `fk_Appointment_idUser`
+  FOREIGN KEY (`idUser`)
+  REFERENCES `hairdb`.`User` (`idUser`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION,
+ADD CONSTRAINT `fk_Appointment_idBarber`
+  FOREIGN KEY (`idBarber`)
+  REFERENCES `hairdb`.`Barber` (`idBarber`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;
+
+
+
+
+CREATE TABLE `hairdb`.`Offer` (
+  `idOffer` INT NOT NULL AUTO_INCREMENT COMMENT '',
+  `Name` VARCHAR(45) NOT NULL COMMENT '',
+  `Price` DECIMAL(5) NOT NULL COMMENT '',
+  `Description` VARCHAR(45) NOT NULL COMMENT '',
+  PRIMARY KEY (`idOffer`)  COMMENT '');
+
+
+
+CREATE TABLE `hairdb`.`Price` (
+  `idPrice` INT NOT NULL AUTO_INCREMENT COMMENT '',
+  `name` VARCHAR(45) NOT NULL COMMENT '',
+  `price` DECIMAL(5) NOT NULL COMMENT '',
+  `description` VARCHAR(45) NOT NULL COMMENT '',
+  PRIMARY KEY (`idPrice`)  COMMENT '');
+
+
+
+
+
