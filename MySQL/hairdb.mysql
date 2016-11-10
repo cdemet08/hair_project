@@ -89,6 +89,10 @@ CREATE TABLE `hairdb`.`Price` (
   PRIMARY KEY (`idPrice`)  COMMENT '');
 
 
+ALTER TABLE `hairdb`.`User` 
+CHANGE COLUMN `adminuser` `adminuser` BINARY(1) NOT NULL DEFAULT 0 COMMENT '' ;
 
+ALTER TABLE `hairdb`.`User` 
+ADD COLUMN `password` VARCHAR(45) NOT NULL COMMENT '' AFTER `adminuser`;
 
 

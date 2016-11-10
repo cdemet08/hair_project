@@ -1,0 +1,9 @@
+
+
+#TODO MySQL
+
+Create MySQL trigger
+	
+	- Compare the date with workday 
+	- Can't set appointment before the now hour
+	- 
