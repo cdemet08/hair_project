@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Services</title>
+    <meta name="viewport" content="width=device-width, initial-scale=2">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+    <link rel="stylesheet" href="css/Stylesheet.css">
+    <link rel="stylesheet" href="css/Login.css">
+
+    <style>
+        body {
+            background-image: url("http://victoriassalon.com/wp-content/uploads/2015/02/rev.jpg");
+            margin-right: 80px;
+            margin-left: 80px;
+        }
+
+        div.transbox {
+            margin: 60px;
+
+            margin-right: 80px;
+            margin-left: 80px;
+            padding: 25px;
+            background-color: #ffffff;
+            border: 0px solid black;
+            opacity: 0.9;
+            filter: alpha(opacity=60); /* For IE8 and earlier */
+        }
+
+        center{
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <a  class="navbar-brand" ><img style="display: inline-block; height: 30px; margin-top: -5px"   src="img/logo.jpg"> </a>
+            <a href="HomePage.html" id="Name">Hair Salon</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+
+                <li>    <a href="HomePage.html">Home  </a>      </li>
+                <li class="active">                  <a href="Services.html">Services</a>      </li>
+                <li>                  <a href="#">Page 2</a>      </li>
+                <li>                  <a href="#">Page 3</a>      </li>
+
+            </ul>
+
+            <ul id="Logout" class="nav navbar-nav navbar-right">
+                <li ><a href="#"><span class="glyphicon glyphicon-log-out"></span>
+                    <button id="LogoutButton" onclick="document.getElementById('LogoutForm').style.display='block'" style="width:auto;" >Logout</button></a></li>
+                </li>
+            </ul>
+
+        </div>
+
+
+        <div id="LoginForm" class="modal">
+
+            <div class="modal-content animate" action="action_page.php">
+
+                <div class="imgcontainer">
+                    <span onclick="document.getElementById('LoginForm').style.display='none'" class="close" title="Close Modal">&times;</span>
+                    <img src="img/avatar.png" alt="Avatar" class="avatar">
+
+                </div>
+
+
+                <div class="form-group">
+                    <label id="email" class="control-label col-sm-2" for="usr">Email:</label>
+                    <div class="col-sm-10">
+                        <input type="text" style="height: 3%" placeholder="Enter your Email" class="form-control" id="usr">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label id="pass"class="control-label col-sm-2" for="pwd">Password:</label>
+                    <div class="col-sm-10">
+                        <input type="password"  style="height: 3%" class="form-control" placeholder="Enter your Password"id="pwd">
+                    </div>
+                </div>
+                <div class="row">
+
+                    <a href="#"><input  id="remember" type="checkbox" checked="checked"> Remember me</a>
+                    <a href="#"><button id="submitButton" type="submit" >Login</button></a>
+
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+</nav>
+
+
+
+    <div class="transbox">
+
+        <img src="http://www.sleekhairsalon.com/sleek_hair_salon_lady.jpg" alt="lady" style="margin:50px 0px;width:450px;height:350px;" align="right";>
+        <div>
+            <h1>Services</h1>
+            <h4>Hair Design & Style</h4>
+            <ul class="bullet"><li>Men/Women’s Cut</li><li>Men Neck Shave</li><li>Blow Dry</li><li>Updos</li><li>Permanent</li><li>Straightening</li><li>Extensions</li></ul>
+            <h4>Color</h4>
+            <ul class="bullet"><li>Single Process</li><li>Single Process & Highlights</li><li>Partial Highlights</li><li>Full Highlights</li><li>Double Process Color</li><li>Color Correction</li></ul>
+            <h4>Make-Up</h4>
+            <ul class="bullet"><li>Application/Lesson</li></ul>
+
+            <h4>Manicure</h4>
+            <ul class="bullet"><li>Professional Manicure</li></ul>
+            <br />
+
+
+            <h3>Price List</h3>
+            <table>
+                <tr><td class="first">Wash and Blow Dry</td><td>starting from $65</td></tr>
+                <tr><td class="first">Men's Shave</td><td>starting from $10</td></tr>
+                <tr><td class="first">Master Stylist Wash, Cut and Style</td><td>starting from $130</td></tr>
+                <tr><td class="first">Junior Stylist Wash, Cut and Style</td><td>$85</td></tr>
+                <tr><td class="first">Glaze</td><td>starting from $55</td></tr>
+                <tr><td class="first">Master Colorist Single Process</td><td>starting from $115</td></tr>
+                <tr><td class="first">Master Colorist Partial Highlights</td><td>starting from $195</td></tr>
+                <tr><td class="first">Master Colorist Full Highlights</td><td>starting from $275</td></tr>
+                <tr><td class="first">Junior Colorist Partial Foil</td><td>$125</td></tr>
+                <tr><td class="first">Junior Colorist Full Foil</td><td>$175</td></tr>
+                <tr><td class="first">Junior Colorist Single Process</td><td>$75</td></tr>
+                <tr><td class="first">Permanent Wave</td><td>starting from $225</td></tr>
+                <tr><td class="first">Brazilian Keratin Treatment</td><td>starting from $350</td></tr>
+                <tr><td class="first">Special Occasion/Updo</td><td>starting from $130</td></tr>
+                <tr><td class="first">Corrective Color</td><td>priced upon consultation</td></tr>
+                <tr><td class="first">Great Lengths Hair Extensions</td><td>priced upon consultation</td></tr>
+            </table>
+
+
+        </div>
+    </div>
+
+</body>
+</html>
