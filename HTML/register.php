@@ -122,6 +122,7 @@ include_once 'includes/functions.php';
             <input type="text" style="height: 8%" placeholder="Last Name" class="form-control" id="register_last">
         </div>
 
+<<<<<<< HEAD
     </div>
     <div class="row">
         <div class="col-sm-2">
@@ -130,6 +131,16 @@ include_once 'includes/functions.php';
         <div class="col-sm-10">
             <input type="text" style="height: 8%" placeholder="Age" class="form-control" id="register_age">
         </div>
+=======
+            </div>
+            <div class="row">
+                <div class="col-sm-2">
+                    <label id="lbl_Register_age" class="control-label" for="register_last">Age:</label>
+                </div>
+                <div class="col-sm-10">
+                    <input type="number" min="1" max="100" style="height: 8%" placeholder="Age" class="form-control" id="register_age">
+                </div>
+>>>>>>> 56a92702bc172732c6ffdf3eea04cbf843168db2
 
     </div>
     <div class="row">
@@ -155,6 +166,7 @@ include_once 'includes/functions.php';
 
                 </ul>
             </div>
+<<<<<<< HEAD
         </div>
 
     </div>
@@ -166,6 +178,20 @@ include_once 'includes/functions.php';
     </div>
 
 </form>
+=======
+            <div class="row">
+                <div class="col-sm-2">
+                    <label id="lbl_Register_sex" class="control-label" >Sex:</label>
+                </div>
+                <div class="col-sm-3">
+                    <select class="form-control" id="sex_selection">
+                        <option style="color: white">Male</option>
+                        <option style="color: white">Female</option>
+
+
+                    </select>
+                </div>
+>>>>>>> 56a92702bc172732c6ffdf3eea04cbf843168db2
 
 </body>
 </html>
