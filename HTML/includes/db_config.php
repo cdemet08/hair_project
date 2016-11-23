@@ -4,8 +4,7 @@
  */  
 define("HOST", "localhost");     // The host you want to connect to.
 define("USER", "root");    // The database username. 
-define("PASSWORD", "zxc");
-//define("PASSWORD", "epl425");    // The database password.
+define("PASSWORD", "epl425");    // The database password.
 define("DATABASE", "hairdb");    // The database name.
  
 define("CAN_REGISTER", "any");

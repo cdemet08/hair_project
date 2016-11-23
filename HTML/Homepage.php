@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en-us">
 <head>
     <meta charset="UTF-8">
@@ -52,8 +51,12 @@
                </ul>
 
            </div>
+
+
+
                      <form id="LoginForm" class="modal" >
 
+                     
                        <div class="modal-content" action="action_page.php">
                            <div class="modal-header" >
                                 <div class="col-sm-offset-4 col-sm-8">
@@ -68,7 +71,7 @@
                                            <label id="email" class="control-label" for="usr">Email:</label>
                                        </div>
                                        <div class="col-sm-10">
-                                           <input type="text" style="height: 2%" placeholder="Email" class="form-control" id="usr">
+                                           <input type="text" style="height: 5%" placeholder="Email" class="form-control" id="usr">
                                         </div>
 
                                 </div>
@@ -77,7 +80,7 @@
                                            <label id="pass"class="control-label " for="pwd">Password:</label>
                                         </div>
                                            <div class="col-sm-10">
-                                               <input type="password"  style="height: 2%" class="form-control" placeholder="Password"id="pwd">
+                                               <input type="password"  style="height: 5%" class="form-control" placeholder="Password" id="pwd">
                                            </div>
 
                                  </div>
@@ -100,7 +103,9 @@
                            </div>
 
                         </div><!--modal content -->
+                        
                     </form>
+
 
                     <form id="ForgotForm" class="modal">
                        <div class="modal-content" action="action_page.php">
