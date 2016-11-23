@@ -122,7 +122,7 @@ if (login_check($mysqli) == true) {
                                         </div>
                                         <div class="col-sm-7">
                                           
-                                              <input type="button" value="Login" onclick="formhash(this.form, this.form.password);" /> 
+                                          <input type="button" value="Login" onclick="formhash(this.form, this.form.password);" /> 
 
                                            
                                           

@@ -32,13 +32,31 @@ function formhash(form, password) {
     form.submit();
 }
 
-function regformhash(form, email, password, conf) {
+function regform(form, email, password, conf, name, lastname, age, phone, sex) {
     // Check each field has a value
     if (email.value == '' || password.value == '' || conf.value == '') {
         alert('You must provide all the requested details. Please try again');
         return false;
     }
     
+    if (name.value == '' || lastname.value == '' || age.value == '' ) {
+        alert('You must provide all the requested details. Please try again');
+        return false;
+    }
+
+    if (phone.value == '' || sex.value == '' ) {
+        alert('You must provide all the requested details. Please try again');
+        return false;
+    }
+
+
+
+    re = /^\w+$/; 
+    if(!re.test(form.password.value)) { 
+        alert("password must contain only letters, numbers and underscores. Please try again"); 
+        form.password.focus();
+        return false; 
+    }
     
     // Check password and confirmation are the same
     if (password.value != conf.value) {
@@ -46,6 +64,7 @@ function regformhash(form, email, password, conf) {
         form.password.focus();
         return false;
     }
+    
         
     // Create a new element input, this will be our hashed password field. 
     var p = document.createElement("input");
