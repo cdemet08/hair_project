@@ -12,9 +12,8 @@ body {
 }
 
 .carousel {
-
-    padding-left: 0%;
-    margin-bottom: 90%;
+	width: 100%
+    margin-bottom: 60%;
 }
  .dropdownMenu1{
     margin-top: 10%;
