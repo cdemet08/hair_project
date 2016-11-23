@@ -101,7 +101,7 @@
                     <label id="lbl_Register_age" class="control-label" for="register_last">Age:</label>
                 </div>
                 <div class="col-sm-10">
-                    <input type="text" style="height: 8%" placeholder="Age" class="form-control" id="register_age">
+                    <input type="number" min="1" max="100" style="height: 8%" placeholder="Age" class="form-control" id="register_age">
                 </div>
 
             </div>
@@ -118,16 +118,13 @@
                 <div class="col-sm-2">
                     <label id="lbl_Register_sex" class="control-label" >Sex:</label>
                 </div>
-                <div class="col-sm-10">
-                    <div class="dropdown">
-                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" id="sex_button">Select
-                            <span class="caret"></span></button>
-                        <ul class="dropdown-menu" id="sex_menu">
-                            <li ><a href="#" style="color: white;">Male</a></li>
-                            <li ><a href="#" style="color: white;">Female</a></li>
+                <div class="col-sm-3">
+                    <select class="form-control" id="sex_selection">
+                        <option style="color: white">Male</option>
+                        <option style="color: white">Female</option>
 
-                        </ul>
-                    </div>
+
+                    </select>
                 </div>
 
             </div>
