@@ -29,16 +29,17 @@ if (login_check($mysqli) == true) {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <script type="text/JavaScript" src="js/forms.js"></script> 
+    <!-- Script -->
 
 
 
     <title>Hair Salon</title>
     <link rel="stylesheet" href="css/Stylesheet.css">
     <link rel="stylesheet" href="css/Login.css">
+    <script type="text/JavaScript" src="js/forms.js"></script> 
 
 
-   </head>
+</head>
 <body>
 
 
@@ -77,8 +78,7 @@ if (login_check($mysqli) == true) {
 
 
 
-                     <form id="LoginForm" class="modal" >
-
+                    <form id="LoginForm"  class="modal" action="includes/login_function.php" method="post" name="login_form">
                      
                        <div class="modal-content" action="action_page.php">
                            <div class="modal-header" >
@@ -94,16 +94,16 @@ if (login_check($mysqli) == true) {
                                            <label id="email" class="control-label" for="usr">Email:</label>
                                        </div>
                                        <div class="col-sm-10">
-                                           <input type="text" style="height: 5%" placeholder="Email" class="form-control" id="usr">
+                                           <input type="text" name="email" style="height: 5%" placeholder="Email" class="form-control" id="usr">
                                         </div>
 
                                 </div>
                                 <div class="row">
                                         <div class="col-sm-2">
-                                           <label id="pass"class="control-label " for="pwd">Password:</label>
+                                           <label id="pass"class="control-label " for="password">Password:</label>
                                         </div>
                                            <div class="col-sm-10">
-                                               <input type="password"  style="height: 5%" class="form-control" placeholder="Password" id="pwd">
+                                               <input type="password" name="password" style="height: 5%" class="form-control" placeholder="Password" id="password">
                                            </div>
 
                                  </div>
@@ -120,7 +120,13 @@ if (login_check($mysqli) == true) {
                                                 Forgot Password?</a>
                                         </div>
                                         <div class="col-sm-7">
-                                           <a href="#"><button id="submitButton" type="submit" >Login</button></a>
+                                          
+                                              <input type="button" value="Login" onclick="formhash(this.form, this.form.password);" /> 
+
+                                            <!--
+                                           <button id="submitButton" type="submit" onclick="formhash(this.form.usr, this.form.pwd ,this.form.usr);" >Login </button>
+                                            -->
+                                          
                                         </div>
                                    </div>
                            </div>
