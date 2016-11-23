@@ -13,8 +13,8 @@ body {
 
 .carousel {
 
-    padding-left: 0%;
-    margin-bottom: 90%;
+    width: inherit;
+    margin-bottom: 60%;
 }
  .dropdownMenu1{
     margin-top: 10%;

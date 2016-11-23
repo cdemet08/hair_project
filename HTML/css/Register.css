@@ -1,0 +1,41 @@
+#lbl_Register_email,#lbl_Register_last,#lbl_Register_name,#lbl_Register_phone,
+#lbl_Register_age,#lbl_Register_sex,#lbl_Register_confirm,#lbl_Register_pass{
+    padding-top: 17%;
+}
+
+
+#Name{
+
+    font-size:30px;
+    color: #ffeaf5;
+
+}
+body{
+    background-image:url("http://victoriassalon.com/wp-content/uploads/2015/02/rev.jpg" );
+}
+#RegisterContainer{
+background-color:#222222;
+    border: 1px solid black;
+    opacity: 0.8;
+    width: 40%;
+    margin-top: 3%;
+color: white;
+}
+#regButton{
+    background-color: inherit;
+    border: 1px solid black;
+    opacity: 0.8;
+    color: white;
+    width: inherit;
+    font-size: 30px;
+}
+#sex_menu{
+
+    background-color:#222222;
+    border: 1px solid black;
+    opacity: 0.8;
+}
+#sex_button{
+    background-color: inherit;
+}
+
