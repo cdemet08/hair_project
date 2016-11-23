@@ -37,6 +37,7 @@ if (login_check($mysqli) == true) {
     <link rel="stylesheet" href="css/Stylesheet.css">
     <link rel="stylesheet" href="css/Login.css">
     <script type="text/JavaScript" src="js/forms.js"></script> 
+    <script src="js/forgotJavaScript.js"></script>
 
 
 </head>
