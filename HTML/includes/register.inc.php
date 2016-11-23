@@ -22,7 +22,7 @@ include_once 'db_config.php';
 
 $error_msg = "";
 
-if (isset($_POST['email'], $_POST['p'])) {
+if (isset($_POST['email'], $_POST['p'] , $_POST['name'] , $_POST['lastname'] , $_POST['age'], $_POST['phone,'] $_POST['sex)'])) {
     // Sanitize and validate the data passed in
     $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
     $email = filter_var($email, FILTER_VALIDATE_EMAIL);
@@ -32,7 +32,14 @@ if (isset($_POST['email'], $_POST['p'])) {
     }
     
     $password = filter_input(INPUT_POST, 'p', FILTER_SANITIZE_STRING);
-   
+    
+    $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
+    $lastname = filter_input(INPUT_POST, 'lastname', FILTER_SANITIZE_STRING);
+    $age = filter_input(INPUT_POST, 'age', FILTER_SANITIZE_NUMBER_INT);
+    $phone = filter_input(INPUT_POST, 'phone', FILTER_SANITIZE_NUMBER_INT);
+    $sex = filter_input(INPUT_POST, 'sex', FILTER_SANITIZE_STRING);
+
+
 
     // Username validity and password validity have been checked client side.
     // This should should be adequate as nobody gains any advantage from

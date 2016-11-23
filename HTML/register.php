@@ -84,7 +84,7 @@ include_once 'includes/functions.php';
                     <label id="lbl_Register_email" class="control-label" for="register_email">Email:</label>
                 </div>
                 <div class="col-sm-10">
-                    <input type="text" style="height: 8%" placeholder="Email" class="form-control" id="register_email">
+                    <input type="text" style="height: 8%" placeholder="Email" name="email" class="form-control" id="register_email">
                 </div>
             </div>
             <div class="row">
@@ -92,7 +92,7 @@ include_once 'includes/functions.php';
                     <label id="lbl_Register_pass" class="control-label" for="register_pass">Password:</label>
                 </div>
                 <div class="col-sm-10">
-                    <input type="text" style="height: 8%" placeholder="Password" class="form-control" id="register_pass">
+                    <input type="text" style="height: 8%" placeholder="Password" name="password" class="form-control" id="register_pass">
                 </div>
             </div>
 
@@ -101,7 +101,7 @@ include_once 'includes/functions.php';
                         <label id="lbl_Register_confirm" class="control-label" for="register_confirm">Confirm Password:</label>
                     </div>
                     <div class="col-sm-10">
-                        <input type="text" style="height: 8%" placeholder="Confirm Password" class="form-control" id="register_confirm">
+                        <input type="text" style="height: 8%" name="config_password" placeholder="Confirm Password" class="form-control" id="register_confirm">
                     </div>
                 </div>
 
@@ -110,7 +110,7 @@ include_once 'includes/functions.php';
                     <label id="lbl_Register_name" class="control-label" for="register_name">Name:</label>
                 </div>
                 <div class="col-sm-10">
-                    <input type="text" style="height: 8%" placeholder="Name" class="form-control" id="register_name">
+                    <input type="text" style="height: 8%" placeholder="Name" name="name" class="form-control" id="register_name">
                 </div>
 
             </div>
@@ -119,7 +119,7 @@ include_once 'includes/functions.php';
                     <label id="lbl_Register_last" class="control-label" for="register_last">Last Name:</label>
                 </div>
                 <div class="col-sm-10">
-                    <input type="text" style="height: 8%" placeholder="Last Name" class="form-control" id="register_last">
+                    <input type="text" style="height: 8%" placeholder="Last Name" name="lastname" class="form-control" id="register_last">
                 </div>
 
             </div>
@@ -128,7 +128,7 @@ include_once 'includes/functions.php';
                     <label id="lbl_Register_age" class="control-label" for="register_last">Age:</label>
                 </div>
                 <div class="col-sm-10">
-                    <input type="number" min="1" max="100" style="height: 8%" placeholder="Age" class="form-control" id="register_age">
+                    <input type="number" min="1" max="100" style="height: 8%" name="age" placeholder="Age" class="form-control" id="register_age">
                 </div>
 
             </div>
@@ -137,7 +137,7 @@ include_once 'includes/functions.php';
                     <label id="lbl_Register_phone" class="control-label" for="register_phone">Phone:</label>
                 </div>
                 <div class="col-sm-10">
-                    <input type="text" style="height: 8%" placeholder="Phone" class="form-control" id="register_phone">
+                    <input type="text" style="height: 8%" placeholder="Phone" name="phone" class="form-control" id="register_phone">
                 </div>
 
             </div>
@@ -146,7 +146,7 @@ include_once 'includes/functions.php';
                     <label id="lbl_Register_sex" class="control-label" >Sex:</label>
                 </div>
                 <div class="col-sm-3">
-                    <select class="form-control" id="sex_selection">
+                    <select class="form-control" name="sex" id="sex_selection">
                         <option style="color: white">Male</option>
                         <option style="color: white">Female</option>
 
@@ -157,9 +157,8 @@ include_once 'includes/functions.php';
             </div>
             <div class="row">
                 <div class="col-sm-9 col-sm-offset-3">
-                
-                   <input type="button" value="Register" onclick="return regformhash(this.form,
-                        this.form.email, this.form.password, this.form.confirmpwd);" /> 
+
+                   <input type="button" value="Register" onclick="return regform(this.form, this.form.email, this.form.password, this.form.config_password, this.form.name, this.form.lastname, this.form.age, this.form.phone, this.form.sex);" /> 
 
                 </div>
             </div>
