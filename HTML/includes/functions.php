@@ -1,39 +1,37 @@
 <?php
 include_once 'db_config.php';
- 
+
+ini_set('display_errors', 'On');
+error_reporting(E_ALL | E_STRICT);
+
 function sec_session_start() {
-    $session_name = 'sec_session_id';   // Set a custom session name
-    /*Sets the session name. 
-     *This must come before session_set_cookie_params due to an undocumented bug/feature in PHP. 
-     */
-    session_name($session_name);
- 
-    $secure = true;
+    $session_name = 'sec_session_id';   // Set a custom session name 
+    $secure = SECURE;
+
     // This stops JavaScript being able to access the session id.
     $httponly = true;
+
     // Forces sessions to only use cookies.
     if (ini_set('session.use_only_cookies', 1) === FALSE) {
         header("Location: ../error.php?err=Could not initiate a safe session (ini_set)");
         exit();
     }
+
     // Gets current cookies params.
     $cookieParams = session_get_cookie_params();
-    session_set_cookie_params($cookieParams["lifetime"],
-        $cookieParams["path"], 
-        $cookieParams["domain"], 
-        $secure,
-        $httponly);
- 
+    session_set_cookie_params($cookieParams["lifetime"], $cookieParams["path"], $cookieParams["domain"], $secure, $httponly);
+
+    // Sets the session name to the one set above.
+    session_name($session_name);
+
     session_start();            // Start the PHP session 
-    session_regenerate_id(true);    // regenerated the session, delete the old one. 
+    session_regenerate_id();    // regenerated the session, delete the old one. 
 }
 
 function login($email, $password, $mysqli) {
     // Using prepared statements means that SQL injection is not possible. 
     if ($stmt = $mysqli->prepare("SELECT idUser, password,adminuser
-        FROM User
-       WHERE email = ?
-        LIMIT 1")) {
+        FROM User WHERE email = ? LIMIT 1")) {
         $stmt->bind_param('s', $email);  // Bind "$email" to parameter.
         $stmt->execute();    // Execute the prepared query.
         $stmt->store_result();
@@ -41,7 +39,9 @@ function login($email, $password, $mysqli) {
         // get variables from result.
         $stmt->bind_result($user_id, $db_password,$db_adminuser);
         $stmt->fetch();
- 
+        
+
+
         if ($stmt->num_rows == 1) {
             // If the user exists we check if the account is locked
             // from too many login attempts 
@@ -54,27 +54,34 @@ function login($email, $password, $mysqli) {
                 // Check if the password in the database matches
                 // the password the user submitted. We are using
                 // the password_verify function to avoid timing attacks.
-                if (password_verify($password, $db_password)) {
+                if (strcmp($db_password, $password) == 0) {
+
+
                     // Password is correct!
                     // Get the user-agent string of the user.
                     $user_browser = $_SERVER['HTTP_USER_AGENT'];
                     // XSS protection as we might print this value
                     $user_id = preg_replace("/[^0-9]+/", "", $user_id);
-                    $_SESSION['user_id'] = $user_id;
                     // XSS protection as we might print this value
-                    $username = preg_replace("/[^a-zA-Z0-9_\-]+/", 
-                                                                "",$email);
+                    $username = preg_replace("/[^a-zA-Z0-9_\-]+/","",$email);
+
+                    $_SESSION['user_id'] = $user_id;
                     $_SESSION['email'] = $email;
-                    $_SESSION['login_string'] = hash('sha512', 
-                              $db_password . $user_browser);
+                    $_SESSION['login_string'] = $db_password . $user_browser;
+
+                    //$_SESSION['login_string'] = hash('sha512', $db_password . $user_browser);
                     // Login successful.
+
                     return true;
                 } else {
+                    /*
                     // Password is not correct
                     // We record this attempt in the database
                     $now = time();
                     $mysqli->query("INSERT INTO login_attempts(user_id, time)
                                     VALUES ('$user_id', '$now')");
+
+                                    */
                     return false;
                 }
             }
@@ -112,41 +119,53 @@ function checkbrute($user_id, $mysqli) {
     }
 }
 
+function console_log( $data ){
+  echo '<script>';
+  echo 'console.log('. json_encode( $data ) .')';
+  echo '</script>';
+}
 
 function login_check($mysqli) {
     // Check if all session variables are set 
-    if (isset($_SESSION['user_id'], 
-                        $_SESSION['email'], 
-                        $_SESSION['login_string'])) {
+    if (isset($_SESSION['user_id'], $_SESSION['email'], $_SESSION['login_string'])) {
  
+
         $user_id = $_SESSION['user_id'];
-        $login_string = $_SESSION['login_string'];
         $email = $_SESSION['email'];
+        $login_string = $_SESSION['login_string'];
+
  
         // Get the user-agent string of the user.
         $user_browser = $_SERVER['HTTP_USER_AGENT'];
  
-        if ($stmt = $mysqli->prepare("SELECT password 
+        if ($stmt = $mysqli->prepare("SELECT email 
                                       FROM User
-                                      WHERE id = ? LIMIT 1")) {
+                                      WHERE idUser = ? LIMIT 1")) {
             // Bind "$user_id" to parameter. 
             $stmt->bind_param('i', $user_id);
             $stmt->execute();   // Execute the prepared query.
             $stmt->store_result();
  
+
+
             if ($stmt->num_rows == 1) {
                 // If the user exists get variables from result.
-                $stmt->bind_result($password);
+                $stmt->bind_result($db_password);
                 $stmt->fetch();
-                $login_check = hash('sha512', $password . $user_browser);
- 
-                if (hash_equals($login_check, $login_string) ){
+                
+                $login_check =  $db_password . $user_browser;
+                console_log($login_check);
+                console_log("email string" . $email);
+
+                 if(strcmp($db_password, $email) == 0){
                     // Logged In!!!! 
                     return true;
                 } else {
                     // Not logged in 
                     return false;
                 }
+
+                
             } else {
                 // Not logged in 
                 return false;
