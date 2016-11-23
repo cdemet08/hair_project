@@ -71,7 +71,7 @@ if (login_check($mysqli) == true) {
                <ul id="Login" class="nav navbar-nav navbar-right">
                    <li ><a href="#"><span class="glyphicon glyphicon-log-in"></span>
                        <button id="LoginButton"onclick="document.getElementById('LoginForm').style.display='block'" type="button" data-toggle="modal" data-target="#gridSystemModal">Login</button></a></li>
-                   <li><a href="RegisterPage.html"><span class="glyphicon glyphicon-registration-mark"></span>Register</a></li>
+                   <li><a href="register.php"><span class="glyphicon glyphicon-registration-mark"></span>Register</a></li>
                </ul>
 
            </div>
@@ -123,9 +123,7 @@ if (login_check($mysqli) == true) {
                                           
                                               <input type="button" value="Login" onclick="formhash(this.form, this.form.password);" /> 
 
-                                            <!--
-                                           <button id="submitButton" type="submit" onclick="formhash(this.form.usr, this.form.pwd ,this.form.usr);" >Login </button>
-                                            -->
+                                           
                                           
                                         </div>
                                    </div>
