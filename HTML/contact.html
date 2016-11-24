@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=2">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src='https://maps.googleapis.com/maps/api/js?v=3.exp&key= AIzaSyArBTKEJX7IoqSZyx4Y71TNl1SWMtI3Nzg '></script>
+
+    <div style='overflow:hidden;height:400px;width:520px;'><div id='gmap_canvas' style='height:400px;width:520px; margin: 50px;'></div>
+        <style>#gmap_canvas img{max-width:none!important;background:none!important}</style></div>
+    <a href='https://embedmaps.net'>www.embedmaps.net</a>
+    <script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=d866bb1ff7eb3fc6d8329da9b3773027f9a04807'></script>
+    <script type='text/javascript'>function init_map(){var myOptions = {zoom:12,center:new google.maps.LatLng(35.1463067,33.40800360000003),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(35.1463067,33.40800360000003)});infowindow = new google.maps.InfoWindow({content:'<strong>University of Cyprus</strong><br>1 Panepistimiou Avenue Aglantzia,<br>2109 Nicosia<br>'});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script>
+
+
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="css/Stylesheet.css">
+    <link rel="stylesheet" href="css/Login.css">
+
+    <style>
+        body {
+
+            background-image: url("http://victoriassalon.com/wp-content/uploads/2015/02/rev.jpg");
+            margin-right: 80px;
+            margin-left: 80px;
+        }
+
+        .first{
+            font-size: 25px;
+        }
+        div.transbox {
+
+            background-color:#222222;
+            border: 1px solid black;
+            opacity: 0.8;
+            color: white;
+            margin: 50px;
+        }
+
+
+
+        center{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+
+
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <a  class="navbar-brand" ><img style="display: inline-block; height: 30px; margin-top: -5px"   src="img/logo.jpg"> </a>
+            <a href="HomePage.html" id="Name">Hair Salon</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+
+                <li>    <a href="HomePage.html">Home  </a>      </li>
+                <li>                  <a href="Services.html">Services</a>      </li>
+                <li class="active">                  <a href="contact.html">Contact Us</a>      </li>
+                <li>                  <a href="#">Page 3</a>      </li>
+
+            </ul>
+
+            <ul id="Login" class="nav navbar-nav navbar-right">
+                <li ><a href="#"><span class="glyphicon glyphicon-log-in"></span>
+                    <button id="LoginButton" onclick="document.getElementById('LoginForm').style.display='block'" style="width:auto;" >Login</button></a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-registration-mark"></span>
+                    <button id="RegisterButton" onclick="document.getElementById('id02').style.display='block'" style="width:auto;" >Register</button> </a></li>
+            </ul>
+
+        </div>
+
+
+        <div id="LoginForm" class="modal">
+
+            <div class="modal-content animate" action="action_page.php">
+
+                <div class="imgcontainer">
+                    <span onclick="document.getElementById('LoginForm').style.display='none'" class="close" title="Close Modal">&times;</span>
+                    <img src="img/avatar.png" alt="Avatar" class="avatar">
+
+                </div>
+
+
+                <div class="form-group">
+                    <label id="email" class="control-label col-sm-2" for="usr">Email:</label>
+                    <div class="col-sm-10">
+                        <input type="text" style="height: 3%" placeholder="Enter your Email" class="form-control" id="usr">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label id="pass"class="control-label col-sm-2" for="pwd">Password:</label>
+                    <div class="col-sm-10">
+                        <input type="password"  style="height: 3%" class="form-control" placeholder="Enter your Password"id="pwd">
+                    </div>
+                </div>
+                <div class="row">
+
+                    <a href="#"><input  id="remember" type="checkbox" checked="checked"> Remember me</a>
+                    <a href="#"><button id="submitButton" type="submit" >Login</button></a>
+
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+</nav>
+
+<div class="transbox">
+
+
+
+
+
+
+
+        <div class="first">
+        <strong>Phone: 22 525031 <br>
+
+        Email: info@unihome.com <br>
+
+        Address: 18 Markou Drakou Strovolos, Nicosia, 2020 </strong>
+
+
+    </div>
+</div>
+</body>
+</html>
