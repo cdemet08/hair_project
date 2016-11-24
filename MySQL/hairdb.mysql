@@ -102,3 +102,6 @@ CREATE TABLE `hairdb`.`login_attempts` (
 );
 
 
+ALTER TABLE `hairdb`.`User` 
+CHANGE COLUMN `male` `male` VARCHAR(1) NOT NULL ,
+CHANGE COLUMN `adminuser` `adminuser` VARCHAR(1) NOT NULL DEFAULT '0' ;

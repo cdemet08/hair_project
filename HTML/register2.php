@@ -1,13 +1,13 @@
 
 
-
 <?php
 
-include_once 'includes/register_fun.php';
 include_once 'includes/functions.php';
-
+include_once 'includes/register_fun.php'
 
 ?>
+
+
 
 <html>
 <head>
@@ -17,23 +17,24 @@ include_once 'includes/functions.php';
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
     <link rel="stylesheet" href="css/Login.css">
     <link rel="stylesheet" href="css/Register.css">
 
 
-    <script type="text/JavaScript" src="js/forms.js"></script>
+        <script type="text/JavaScript" src="js/forms.js"></script>
+
 
     <title>Register</title>
 </head>
 <body>
 
-
-<?php
-        if (!empty($error_msg)) {
-            echo $error_msg;
-        }
-        ?>
+ <?php
+    
+    if (!empty($error_msg)) {
+        echo $error_msg;
+    }
+?>
+ 
 
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container-fluid">
@@ -52,7 +53,7 @@ include_once 'includes/functions.php';
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
 
-                <li class="active">    <a href="index.php">Home  </a>      </li>
+                <li class="active">    <a href="HomePage.html">Home  </a>      </li>
                 <li>                  <a href="#">Page 1</a>      </li>
                 <li>                  <a href="#">Page 2</a>      </li>
                 <li>                  <a href="#">Page 3</a>      </li>
@@ -63,24 +64,13 @@ include_once 'includes/functions.php';
 
         </div>
     </div>
-</nav>
+    </nav>
 
 
-    
+        <form class="container" id="RegisterContainer" method="post" name="registration_form" action="<?php echo esc_url($_SERVER['PHP_SELF']); ?>">
 
 
-
-    <!--
-    <form class="container" id="RegisterContainer">
-
-
-
-    <form class="container" id="RegisterContainer" method="post" name="registration_form" action="<?php //echo esc_url($_SERVER['PHP_SELF']); ?>">
-        -->
-
-    <form class="container" id="RegisterContainer" action="includes/register.inc.php" method="post" name="registration_form" >
-    
-     <div class="row">
+            <div class="row">
                 <div class="col-sm-offset-1 col-sm-11">
                     <div class="imgcontainer">
                         <img src="img/avatar.png" alt="Avatar" class="avatar" >
@@ -103,7 +93,7 @@ include_once 'includes/functions.php';
                     <label id="lbl_Register_pass" class="control-label" for="register_pass">Password:</label>
                 </div>
                 <div class="col-sm-10">
-                    <input type="text" style="height: 8%" placeholder="Password" name="password" class="form-control" id="register_pass">
+                    <input type="password" style="height: 8%" placeholder="Password" name="password" class="form-control" id="register_pass">
                 </div>
             </div>
 
@@ -112,7 +102,7 @@ include_once 'includes/functions.php';
                         <label id="lbl_Register_confirm" class="control-label" for="register_confirm">Confirm Password:</label>
                     </div>
                     <div class="col-sm-10">
-                        <input type="text" style="height: 8%" name="config_password" placeholder="Confirm Password" class="form-control" id="register_confirm">
+                        <input type="password" style="height: 8%" name="config_password" placeholder="Confirm Password" class="form-control" id="register_confirm">
                     </div>
                 </div>
 
@@ -152,6 +142,8 @@ include_once 'includes/functions.php';
                 </div>
 
             </div>
+
+            <!--
             <div class="row">
                 <div class="col-sm-2">
                     <label id="lbl_Register_sex" class="control-label" >Sex:</label>
@@ -166,15 +158,13 @@ include_once 'includes/functions.php';
                 </div>
 
             </div>
+            
+            -->
+
             <div class="row">
                 <div class="col-sm-9 col-sm-offset-3">
-
-                        <!--  <input type="button" value="Register" /> -->
-
-                      
-                   <input type="button" value="Register" onclick="return regform(this.form, this.form.email, this.form.password, this.form.config_password, this.form.name, this.form.lastname, this.form.age, this.form.phone, this.form.sex);" /> 
-
-                        
+                     
+                   <input type="button" value="Register" onclick="return regform(this.form, this.form.email, this.form.password, this.form.config_password, this.form.name, this.form.lastname, this.form.age, this.form.phone);" /> 
                 </div>
             </div>
     </form>

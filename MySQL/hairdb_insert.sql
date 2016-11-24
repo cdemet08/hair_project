@@ -3,6 +3,8 @@
 
 INSERT INTO User (email,name,lastname,phone,age,male,adminuser,password) VALUES ('cdemets','ch','last',1256622,22,1,1,'really');
 INSERT INTO User (email,name,lastname,phone,age,male,adminuser,password) VALUES ('cdemet','ch','last',1256622,22,1,0,'epl425');
+INSERT INTO User (email,name,lastname,phone,age,male,adminuser,password) VALUES ('cdemet22','ch','last',125662,22,'M','N','epl425');
+
 
 INSERT INTO Barber (name,lastname,phone,email,male,age) VALUES ('cde','ch',1256622,'chemail',1,59);
 

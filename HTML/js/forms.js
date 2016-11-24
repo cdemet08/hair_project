@@ -32,7 +32,42 @@ function formhash(form, password) {
     form.submit();
 }
 
-function regform(form, email, password, conf, name, lastname, age, phone, sex) {
+
+function regformtest(form,email,password,conf){
+
+    if (email.value == '' || password.value == '' || conf.value == '') {
+        alert('You must provide all the requested details. Please try again');
+        return false;
+    }
+
+    if (password.value != conf.value) {
+        alert('Your password and confirmation do not match. Please try again');
+        form.password.focus();
+        return false;
+    }
+    
+        
+    // Create a new element input, this will be our hashed password field. 
+    var p = document.createElement("input");
+
+    // Add the new element to our form. 
+    form.appendChild(p);
+    p.name = "p";
+    p.type = "hidden";
+    p.value = password.value;
+
+    // Make sure the plaintext password doesn't get sent. 
+    password.value = "";
+    conf.value = "";
+
+    // Finally submit the form. 
+    form.submit();
+    return true;
+
+
+}
+
+function regform(form, email, password, conf, name, lastname, age, phone ) {
     // Check each field has a value
     if (email.value == '' || password.value == '' || conf.value == '') {
         alert('You must provide all the requested details. Please try again');
@@ -44,6 +79,7 @@ function regform(form, email, password, conf, name, lastname, age, phone, sex) {
         return false;
     }
 
+/*
     if (phone.value == '' || sex.value == '' ) {
         alert('You must provide all the requested details. Please try again');
         return false;
@@ -51,12 +87,26 @@ function regform(form, email, password, conf, name, lastname, age, phone, sex) {
 
 
 
+    if (sex.value == 'Male'){
+    
+        sex.value='0';
+    } 
+    else {
+        sex.value='1';
+    }
+
+*/
+
+
+    /*
     re = /^\w+$/; 
     if(!re.test(form.password.value)) { 
         alert("password must contain only letters, numbers and underscores. Please try again"); 
         form.password.focus();
         return false; 
     }
+
+    */
     
     // Check password and confirmation are the same
     if (password.value != conf.value) {

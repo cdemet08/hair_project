@@ -119,11 +119,7 @@ function checkbrute($user_id, $mysqli) {
     }
 }
 
-function console_log( $data ){
-  echo '<script>';
-  echo 'console.log('. json_encode( $data ) .')';
-  echo '</script>';
-}
+
 
 function login_check($mysqli) {
     // Check if all session variables are set 
