@@ -150,9 +150,7 @@ function login_check($mysqli) {
                 $stmt->fetch();
                 
                 $login_check =  $db_password . $user_browser;
-                console_log($login_check);
-                console_log("email string" . $email);
-
+               
                  if(strcmp($db_password, $email) == 0){
                     // Logged In!!!! 
                     return true;
