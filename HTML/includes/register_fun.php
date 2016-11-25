@@ -89,7 +89,8 @@ if (isset($_POST['email'], $_POST['p'] , $_POST['name'] , $_POST['lastname'] , $
                 exit();
             }
         }
-        header('Location: ./register_success.php');
+        
+        header('Location: ./user.php');
         exit();
     }
 
