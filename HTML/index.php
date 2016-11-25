@@ -51,6 +51,7 @@ if (strcmp("login_failure", $error) ===0 ){
     <link rel="stylesheet" href="css/Login.css">
     <script type="text/JavaScript" src="js/forms.js"></script> 
     <script src="js/forgotJavaScript.js"></script>
+    <script src="js/forgotJavaScript.js"></script>
 
 
 </head>
@@ -146,7 +147,6 @@ if (strcmp("login_failure", $error) ===0 ){
                         </div><!--modal content -->
                         
                     </form>
-
 
                     <form id="ForgotForm" class="modal">
                        <div class="modal-content" action="action_page.php">
