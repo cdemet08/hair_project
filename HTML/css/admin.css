@@ -1,7 +1,4 @@
-body {
-    background-color: #999999;
 
-}
 
 
 body {
@@ -14,14 +11,7 @@ body {
 .first{
     font-size: 25px;
 }
-div.transbox {
 
-    background-color:#222222;
-    border: 1px solid black;
-    opacity: 0.8;
-    color: white;
-    margin: 50px;
-}
 
 
 
@@ -161,8 +151,14 @@ span.psw {
     }
 }
 
+div.transbox {
 
-
+    background-color:#222222;
+    border: 1px solid black;
+    opacity: 0.8;
+    color: white;
+    margin: 50px;
+}
 
 
 .first {

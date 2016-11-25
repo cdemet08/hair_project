@@ -30,9 +30,7 @@ if (login_check($mysqli) != 2) {
 
 
 
-    <link rel="stylesheet" href="css/Stylesheet.css">
-    <link rel="stylesheet" href="css/Login.css">
-    <link rel="stylesheet" href="css/user.css">
+    <link rel="stylesheet" href="css/admin.css">
 
     
 </head>
@@ -67,8 +65,6 @@ if (login_check($mysqli) != 2) {
   
                 <li> <a href="includes/logout_function.php">Logout</a></li>
                
-                  
-               
             </ul>
 
         </div>
@@ -79,34 +75,36 @@ if (login_check($mysqli) != 2) {
 
 
 
-    <div class="transbox">
+<div class="transbox">
 
-        <img src="http://www.sleekhairsalon.com/sleek_hair_salon_lady.jpg" alt="lady" style="margin:50px 0px; padding:10px; width:450px;height:350px;" align="right";>
-        <div class="letters" >
-
-
+    <img src="http://www.sleekhairsalon.com/sleek_hair_salon_lady.jpg" alt="lady" style="margin:50px 0px; padding:10px; width:450px;height:350px;" align="right";>
+    <div class="letters" >
 
 
-            <table>
-                <h1>Services & Price List</h1> <br>
+        <table>
+            <h1>Services & Price List</h1> <br>
 
 
 
-                <tr><td class="first">Wash and Blow Dry</td><td class="first">€5</td></tr>
-                <tr><td class="first">Men's Shave</td><td class="first">€20</td></tr>
-                <tr><td class="first">Men's Hair Cut and Style</td><td class="first">€15</td></tr>
-                <tr><td class="first">Women's Hair Cut</td><td class="first">€15</td></tr>
-                <tr><td class="first">Women's Hair Style</td><td class="first">€20</td></tr>
-                <tr><td class="first">Men's hair coloring</td><td class="first">€20</td></tr>
-                <tr><td class="first">Women's hair coloring</td><td class="first">€30</td></tr>
-                <tr><td class="first">Highlights</td><td class="first">starting from €40</td></tr>
-                <tr><td class="first">Permanent Wave</td><td class="first">€50</td></tr>
-                <tr><td class="first">Brazilian Keratin Treatment</td><td class="first">€40</td></tr>
-            </table>
+            
+            <form>
+            <tr><td class="first">Wash and Blow Dry</td> <td class="first">€5</td> <td><input type="text" name="price1" size="8"></td></tr>
+                <tr><td class="first">Men's Shave</td><td class="first">€5</td><td><input type="text" name="price2" size="8"></td></tr>
+            <tr><td class="first">Men's Hair Cut and Style</td><td class="first">€5</td><td><input type="text" name="price3" size="8"></td></tr>
+            <tr><td class="first">Women's Hair Cut</td><td class="first">€5</td><td><input type="text" name="price4" size="8"></td></tr>
+            <tr><td class="first">Women's Hair Style</td><td class="first">€5</td><td><input type="text" name="price5" size="8"></td></tr>
+            <tr><td class="first">Men's hair coloring</td><td class="first">€5</td><td><input type="text" name="price6" size="8"></td></tr>
+            <tr><td class="first">Women's hair coloring</td><td class="first">€5</td><td><input type="text" name="price7" size="8"></td></tr>
+            <tr><td class="first">Highlights</td><td class="first">€5</td><td><input type="text" name="price8" size="8"></td></tr>
+            <tr><td class="first">Permanent Wave</td><td class="first">€5</td><td><input type="text" name="price9" size="8"></td></tr>
+            <tr><td class="first">Brazilian Keratin Treatment  </td><td class="first">€5</td><td><input type="text" name="price10" size="8"></td></tr>
+            </form>
+        </table>
 
 
-        </div>
+
     </div>
+</div>
 
 </body>
 </html>

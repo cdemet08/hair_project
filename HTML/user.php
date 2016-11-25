@@ -8,16 +8,19 @@ include_once 'includes/functions.php';
 
 sec_session_start();
 
-
+/*
 if (login_check($mysqli) == 2) {
   
        header('Location: ../admin.php');
 
 } 
-else if (login_check($mysqli) <= 0 ){
+*/
+
+if (login_check($mysqli) <= 0 ){
    
     header('Location: ../error.php?error=not_authorized_page');
 }
+
 
 
 
@@ -34,8 +37,7 @@ else if (login_check($mysqli) <= 0 ){
 
 
 
-    <link rel="stylesheet" href="css/Stylesheet.css">
-    <link rel="stylesheet" href="css/Login.css">
+    
     <link rel="stylesheet" href="css/user.css">
 
     
@@ -77,45 +79,11 @@ else if (login_check($mysqli) <= 0 ){
 
         </div>
 
-        <!--
+    
 
-        <div id="LoginForm" class="modal">
+        
 
-            <div class="modal-content animate" action="action_page.php">
-
-                <div class="imgcontainer">
-                    <span onclick="document.getElementById('LoginForm').style.display='none'" class="close" title="Close Modal">&times;</span>
-                    <img src="img/avatar.png" alt="Avatar" class="avatar">
-
-                </div>
-
-
-                <div class="form-group">
-                    <label id="email" class="control-label col-sm-2" for="usr">Email:</label>
-                    <div class="col-sm-10">
-                        <input type="text" style="height: 3%" placeholder="Enter your Email" class="form-control" id="usr">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label id="pass"class="control-label col-sm-2" for="pwd">Password:</label>
-                    <div class="col-sm-10">
-                        <input type="password"  style="height: 3%" class="form-control" placeholder="Enter your Password"id="pwd">
-                    </div>
-                </div>
-                <div class="row">
-
-                    <a href="#"><input  id="remember" type="checkbox" checked="checked"> Remember me</a>
-                    <a href="#"><button id="submitButton" type="submit" >Login</button></a>
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-        -->
+        
     </div>
 </nav>
 
@@ -141,7 +109,7 @@ else if (login_check($mysqli) <= 0 ){
                 <tr><td class="first">Women's Hair Style</td><td class="first">€20</td></tr>
                 <tr><td class="first">Men's hair coloring</td><td class="first">€20</td></tr>
                 <tr><td class="first">Women's hair coloring</td><td class="first">€30</td></tr>
-                <tr><td class="first">Highlights</td><td class="first">starting from €40</td></tr>
+                <tr><td class="first">Highlights</td><td class="first">€40</td></tr>
                 <tr><td class="first">Permanent Wave</td><td class="first">€50</td></tr>
                 <tr><td class="first">Brazilian Keratin Treatment</td><td class="first">€40</td></tr>
             </table>
