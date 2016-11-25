@@ -6,7 +6,7 @@ include_once 'db_config.php';
 
 $error_msg = "";
 
-if (isset($_POST['email'], $_POST['p'] , $_POST['name'] , $_POST['lastname'] , $_POST['age'], $_POST['phone'] )) {
+if (isset($_POST['email'], $_POST['p'] , $_POST['name'] , $_POST['lastname'] , $_POST['age'], $_POST['phone'] , $_POST['sex'] )) {
     // Sanitize and validate the data passed in
 
     $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
@@ -25,19 +25,16 @@ if (isset($_POST['email'], $_POST['p'] , $_POST['name'] , $_POST['lastname'] , $
     $phone = filter_input(INPUT_POST, 'phone', FILTER_SANITIZE_NUMBER_INT);
 
 
-/*
+
     $temp_sex = filter_input(INPUT_POST, 'sex', FILTER_SANITIZE_STRING);
     
 
-    $sex = '1';
+    $sex = "M";
     if (strcmp($temp_sex, "Male") !== 0 ){
-        $sex = '0' ;
+        $sex = "W";
 
-
-    }else{
-        $sex = '1';
     }
-*/
+
 
 
 
@@ -62,14 +59,11 @@ if (isset($_POST['email'], $_POST['p'] , $_POST['name'] , $_POST['lastname'] , $
     
 
 
-    $email = "ca";
-    $name = "first";
-    $lastname = "ast";
-    $password = "pass";
-    $sex = "M";
+   
+
+
     $adminuser = "N";
-    $phone = 96362;
-    $age = 10;
+   
     
 
     $driver = new mysqli_driver();

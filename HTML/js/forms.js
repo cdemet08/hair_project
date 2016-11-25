@@ -67,7 +67,7 @@ function regformtest(form,email,password,conf){
 
 }
 
-function regform(form, email, password, conf, name, lastname, age, phone ) {
+function regform(form, email, password, conf, name, lastname, age, phone ,sex) {
     // Check each field has a value
     if (email.value == '' || password.value == '' || conf.value == '') {
         alert('You must provide all the requested details. Please try again');
@@ -79,14 +79,14 @@ function regform(form, email, password, conf, name, lastname, age, phone ) {
         return false;
     }
 
-/*
+
     if (phone.value == '' || sex.value == '' ) {
         alert('You must provide all the requested details. Please try again');
         return false;
     }
 
 
-
+   /*
     if (sex.value == 'Male'){
     
         sex.value='0';
@@ -98,7 +98,7 @@ function regform(form, email, password, conf, name, lastname, age, phone ) {
 */
 
 
-    /*
+    
     re = /^\w+$/; 
     if(!re.test(form.password.value)) { 
         alert("password must contain only letters, numbers and underscores. Please try again"); 
@@ -106,7 +106,7 @@ function regform(form, email, password, conf, name, lastname, age, phone ) {
         return false; 
     }
 
-    */
+    
     
     // Check password and confirmation are the same
     if (password.value != conf.value) {

@@ -143,7 +143,7 @@ include_once 'includes/register_fun.php'
 
             </div>
 
-            <!--
+            
             <div class="row">
                 <div class="col-sm-2">
                     <label id="lbl_Register_sex" class="control-label" >Sex:</label>
@@ -159,12 +159,12 @@ include_once 'includes/register_fun.php'
 
             </div>
             
-            -->
+          
 
             <div class="row">
                 <div class="col-sm-9 col-sm-offset-3">
                      
-                   <input type="button" value="Register" onclick="return regform(this.form, this.form.email, this.form.password, this.form.config_password, this.form.name, this.form.lastname, this.form.age, this.form.phone);" /> 
+                   <input type="button" value="Register" onclick="return regform(this.form, this.form.email, this.form.password, this.form.config_password, this.form.name, this.form.lastname, this.form.age, this.form.phone , this.form.sex);" /> 
                 </div>
             </div>
     </form>
