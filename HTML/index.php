@@ -10,6 +10,8 @@ include_once 'includes/functions.php';
 
 sec_session_start();
 
+
+
 if (login_check($mysqli) == true) {
     $logged = 'in';
     header('Location: ../user.php');
@@ -17,6 +19,17 @@ if (login_check($mysqli) == true) {
 } else {
     $logged = 'out';
 }
+
+
+$error = filter_input( INPUT_GET, 'error', FILTER_SANITIZE_URL );
+
+
+if (strcmp("login_failure", $error) ===0 ){
+
+  echo "error in login";
+
+}
+
 
 ?>
 
