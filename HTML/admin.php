@@ -8,10 +8,11 @@ include_once 'includes/functions.php';
 
 sec_session_start();
 
-if (login_check($mysqli) == false) {
+if (login_check($mysqli) != 2) {
     
     header('Location: ../error.php?error=not_authorized_page');
-} 
+
+}
 
 
 

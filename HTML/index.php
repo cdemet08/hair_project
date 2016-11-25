@@ -12,15 +12,24 @@ sec_session_start();
 
 
 
-if (login_check($mysqli) == true) {
-    $logged = 'in';
-    header('Location: ../user.php');
+if (login_check($mysqli) == 1) {
+  $logged = 'in';
 
-} else {
+  header('Location: ../user.php');
+} 
+
+else if (login_check($mysqli) == 2) {
+  $logged = 'in';
+
+  header('Location: ../admin.php');
+
+}
+else {
     $logged = 'out';
+
 }
 
-
+/*
 $error = filter_input( INPUT_GET, 'error', FILTER_SANITIZE_URL );
 
 
@@ -29,7 +38,7 @@ if (strcmp("login_failure", $error) ===0 ){
   echo "error in login";
 
 }
-
+*/
 
 ?>
 
@@ -37,7 +46,8 @@ if (strcmp("login_failure", $error) ===0 ){
 <head>
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=3">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -50,7 +60,6 @@ if (strcmp("login_failure", $error) ===0 ){
     <link rel="stylesheet" href="css/Stylesheet.css">
     <link rel="stylesheet" href="css/Login.css">
     <script type="text/JavaScript" src="js/forms.js"></script> 
-    <script src="js/forgotJavaScript.js"></script>
     <script src="js/forgotJavaScript.js"></script>
 
 

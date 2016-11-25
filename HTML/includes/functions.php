@@ -28,6 +28,10 @@ function sec_session_start() {
     session_regenerate_id();    // regenerated the session, delete the old one. 
 }
 
+
+
+
+
 function login($email, $password, $mysqli) {
     // Using prepared statements means that SQL injection is not possible. 
     if ($stmt = $mysqli->prepare("SELECT idUser, password,adminuser
@@ -54,7 +58,7 @@ function login($email, $password, $mysqli) {
                 // Check if the password in the database matches
                 // the password the user submitted. We are using
                 // the password_verify function to avoid timing attacks.
-                if (strcmp($db_password, $password) == 0) {
+                if (strcmp($db_password, $password) === 0 and strcmp($db_adminuser,"N") === 0) {
 
 
                     // Password is correct!
@@ -62,8 +66,7 @@ function login($email, $password, $mysqli) {
                     $user_browser = $_SERVER['HTTP_USER_AGENT'];
                     // XSS protection as we might print this value
                     $user_id = preg_replace("/[^0-9]+/", "", $user_id);
-                    // XSS protection as we might print this value
-                    $username = preg_replace("/[^a-zA-Z0-9_\-]+/","",$email);
+                  
 
                     $_SESSION['user_id'] = $user_id;
                     $_SESSION['email'] = $email;
@@ -72,8 +75,28 @@ function login($email, $password, $mysqli) {
                     //$_SESSION['login_string'] = hash('sha512', $db_password . $user_browser);
                     // Login successful.
 
-                    return true;
-                } else {
+                    return 1;
+                    //return true;
+                } 
+                else if (strcmp($db_password, $password) === 0 and strcmp($db_adminuser,"Y") === 0) {
+                    //admin 
+                      // Password is correct!
+
+                    // Get the user-agent string of the user.
+                    $user_browser = $_SERVER['HTTP_USER_AGENT'];
+                    // XSS protection as we might print this value
+                    $user_id = preg_replace("/[^0-9]+/", "", $user_id);
+                    
+
+                    $_SESSION['user_id'] = $user_id;
+                    $_SESSION['email'] = $email;
+                    $_SESSION['login_string'] = $db_password . $user_browser;
+
+                    
+                    //admin
+                     return 2;
+                }
+                else {
                     /*
                     // Password is not correct
                     // We record this attempt in the database
@@ -82,12 +105,15 @@ function login($email, $password, $mysqli) {
                                     VALUES ('$user_id', '$now')");
 
                                     */
-                    return false;
+
+                    return 0;
+                    //return false;
                 }
             }
         } else {
+            return -1;
             // No user exists.
-            return false;
+            // false;
         }
     }
 }
@@ -121,6 +147,7 @@ function checkbrute($user_id, $mysqli) {
 
 
 
+
 function login_check($mysqli) {
     // Check if all session variables are set 
     if (isset($_SESSION['user_id'], $_SESSION['email'], $_SESSION['login_string'])) {
@@ -134,7 +161,7 @@ function login_check($mysqli) {
         // Get the user-agent string of the user.
         $user_browser = $_SERVER['HTTP_USER_AGENT'];
  
-        if ($stmt = $mysqli->prepare("SELECT email 
+        if ($stmt = $mysqli->prepare("SELECT email,password,adminuser
                                       FROM User
                                       WHERE idUser = ? LIMIT 1")) {
             // Bind "$user_id" to parameter. 
@@ -143,34 +170,48 @@ function login_check($mysqli) {
             $stmt->store_result();
  
 
-
             if ($stmt->num_rows == 1) {
                 // If the user exists get variables from result.
-                $stmt->bind_result($db_password);
+                $stmt->bind_result($db_email, $db_password,$db_adminuser);
                 $stmt->fetch();
                 
                 $login_check =  $db_password . $user_browser;
                
-                 if(strcmp($db_password, $email) == 0){
+                 if(strcmp($login_check, $login_string) === 0) {
+
+
+                    if (strcmp($db_adminuser,"Y") === 0){
+                        //is admin
+                        return 2;
+                    }
+                    else {
+
+
+                    }
+
                     // Logged In!!!! 
-                    return true;
+                    //check if is admin or user; and return the correct 
+
+
+
+                    return 1;
                 } else {
                     // Not logged in 
-                    return false;
+                    return 0;
                 }
 
                 
             } else {
                 // Not logged in 
-                return false;
+                return -1;
             }
         } else {
             // Not logged in 
-            return false;
+            return -2;
         }
     } else {
         // Not logged in 
-        return false;
+        return -2;
     }
 }
 
