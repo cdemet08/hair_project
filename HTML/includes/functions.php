@@ -30,8 +30,6 @@ function sec_session_start() {
 
 
 
-
-
 function login($email, $password, $mysqli) {
     // Using prepared statements means that SQL injection is not possible. 
     if ($stmt = $mysqli->prepare("SELECT idUser, password,adminuser
