@@ -3,28 +3,6 @@ body {
 
 }
 
-
-body {
-
-    background-image: url("http://victoriassalon.com/wp-content/uploads/2015/02/rev.jpg");
-    margin-right: 80px;
-    margin-left: 80px;
-}
-
-.first{
-    font-size: 25px;
-}
-div.transbox {
-
-    background-color:#222222;
-    border: 1px solid black;
-    opacity: 0.8;
-    color: white;
-    margin: 50px;
-}
-
-
-
 #Name{
 
     font-size:30px;
@@ -32,19 +10,47 @@ div.transbox {
 
 }
 
-.carousel {
-
-
-    width: inherit;
-    width: 100%
-    margin-bottom: 60%;
-}
- .dropdownMenu1{
-    margin-top: 10%;
+#mycarousel{
+ width: 100%;
 }
 
+
+
+.headerstyle
+{
+    border: 1px;
+    padding: 8px;
+    padding-left:25px;
+    padding-right:25px;
+    font-color: blue;
+    font-weight: bold;
+
+
+}
+
+
+
+
+/*Navigation Bar */
 .navbar-brand {
     max-width: 50%;
+}
+
+.navbar-nav > li > .dropdown-menu {
+    background-color: white;
+    border:  blue;
+    border-bottom-width :100px ;
+}
+
+.navbar-right>li.dropdown #dropdownMenu{
+
+
+    background-color: inherit;
+    color: darkgrey;
+
+    margin-top: 10px;
+    border: inherit;
+
 }
 
 center{
@@ -52,70 +58,13 @@ center{
 }
 
 
-/* Full-width input fields */
-input[type=text], input[type=password] {
-    width: 100%;
-    padding: 12px 5px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
 
-/* Set a style for all buttons */
-#LoginButton,#RegisterButton  {
-    background-color: inherit;
-    color: darkgrey;
-    border: none;
-    cursor: pointer;
-
-
-}
-
-#submitButton{
-
-}
-
-#remember{
-
-}
-/* Extra styles for the cancel button */
-.cancelbtn {
-    width: auto;
-    padding: 10px 18px;
-    background-color: #f44336;
-}
-
-/* Center the image and position the close button */
-.imgcontainer {
-    text-align: center;
-    margin: 24px 0 12px 0;
-    position: relative;
-
-}
-
-.avatar {
-    width: 20%;
-    border-radius: 100%;
-
-}
-#email,#pass,#lbl_forgot_email{
-    padding-top: 30%;
-}
-
-span.psw {
-    padding-top: 16px;
-}
-
-
-
-/* Modal Content/Box */
 .modal-content {
     background-color: #fefefe;
     margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
     border: 1px solid #888;
-    width: 40%; /* Could be more or less, depending on screen size */
-   height: inherit;
+    width: 60%; /* Could be more or less, depending on screen size */
+    height: inherit;
 }
 
 /* The Close Button (x) */
@@ -133,7 +82,11 @@ span.psw {
     color: red;
     cursor: pointer;
 }
+.avatar {
+    width: 20%;
+    border-radius: 100%;
 
+}
 /* Add Zoom Animation */
 .animate {
     -webkit-animation: animatezoom 0.6s;
@@ -160,14 +113,237 @@ span.psw {
         width: 100%;
     }
 }
+#myAppointments .modal-dialog  {width:75%;}
 
-
-
-
-
-.first {
-    color: white;  
+/* Popup container - can be anything you want */
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
+
+/* The actual popup */
+.popup .popuptext {
+    visibility: hidden;
+    width: 100px;
+    height: 40px;
+    font-size: 20px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: white transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+}
+
+/* Calendar */
+
+#bookButton{
+    background-color: inherit;
+    font-size: 30px;
+    font-family: inherit;
+    color: white;
+    margin-left: 30%;
+    margin-top: 1%;
+}
+
+#bookNow{
+    padding-left: 5%;
+    margin-bottom: auto;
+    font-size: 30px;
+    color: white;
+}
+.table1 {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 70%;
+    border: 0px solid #ddd;
+    font-size: 30px;
+    font-family: inherit;
+    color: white;
+}
+
+.table1.th, .table1.td {
+    border: none;
+    text-align: left;
+    padding: 2px;
+}
+
+.table1.tr:nth-child(even){background-color: #f2f2f2}
+
+#date_hours{
+    color: white;
+}
+
+
+/*Services */
+#servicesContainer{
+
+ padding-top: 10px;
+}
+.first {
+    color: white;
+    font-size: 25px;
+}
+
 
 table {border-spacing: 9px 1px;}
 td    {padding: 6px;}
+
+
+
+#popey2{
+    width:100%;
+    height: 300px;
+}
+
+
+#cal{
+    height: 300px;
+}
+
+/* css for map and Contacts */
+
+#date_hours {
+
+
+    color: white;
+    font-size: 25px;
+}
+#gmap_canvas img{max-width:none!important;background:none!important}
+#gmap_canvas{
+    width: 90%;
+    height: 150px;
+    margin-left : -20px;
+    draggable: false;
+}
+#myRow{
+
+    border: 1px solid black;
+
+
+}
+center{
+    text-align: center;
+}
+.navbar-bottom{
+
+    color: white;
+}
+
+/* Contacts Css*/
+#Contacts{
+
+padding-top: 20px;
+    padding-bottom: 20px;
+
+}
+
+
+/*
+
+christopher
+
+*/
+
+
+#label_img_trump > input{
+
+    visibility: hidden;
+    position: absolute;
+}
+
+#label_img_trump > input + img{
+    cursor:pointer;
+    border:2px solid transparent;
+}
+#label_img_trump > input:checked + img{
+    border:2px solid #f00;
+}
+
+
+
+#label_img_popey > input{
+
+    visibility: hidden;
+    position: absolute;
+}
+
+#label_img_popey > input + img{
+    cursor:pointer;
+    border:2px solid transparent;
+}
+#label_img_popey> input:checked + img{
+    border:2px solid #f00;
+}
+
+#label_img_scooby > input{
+
+    visibility: hidden;
+    position: absolute;
+}
+
+#label_img_scooby > input + img{
+    cursor:pointer;
+    border:2px solid transparent;
+}
+
+
+#label_img_scooby > input:checked + img{
+    border:2px solid #f00;
+}
+
+
+#label_img_smurfette > input{
+
+    visibility: hidden;
+    position: absolute;
+}
+
+#label_img_smurfette > input + img{
+    cursor:pointer;
+    border:2px solid transparent;
+}
+
+
+#label_img_smurfette > input:checked + img{
+    border:2px solid #f00;
+}
