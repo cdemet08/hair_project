@@ -94,8 +94,13 @@ YUI().use('calendar', 'datatype-date', 'datatype-date-math', function(Y) {
             // we expect there to be only one date)
             var newDate = ev.newSelection[0];
 
+<<<<<<< HEAD
             var user = "/testcal.php?appointment=";
             var newSite = user.concat(dtdate.format(newDate));
+=======
+            var testcal = "/testcal.php?appointment=";
+            var newSite = testcal.concat(dtdate.format(newDate));
+>>>>>>> 213d2d2ee4483a82a35ddc017e58fc1bd20e2003
 
             window.location.href = newSite;
 

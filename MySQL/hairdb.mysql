@@ -105,3 +105,18 @@ CREATE TABLE `hairdb`.`login_attempts` (
 ALTER TABLE `hairdb`.`User` 
 CHANGE COLUMN `male` `male` VARCHAR(1) NOT NULL ,
 CHANGE COLUMN `adminuser` `adminuser` VARCHAR(1) NOT NULL DEFAULT '0' ;
+
+
+ALTER TABLE `hairdb`.`Appointment` 
+CHANGE COLUMN `date` `dateTimeApp` DATETIME NOT NULL ;
+
+ALTER TABLE `hairdb`.`Appointment` 
+ADD COLUMN `typeAppointment` VARCHAR(45) NOT NULL AFTER `idBarber`;
+
+
+CREATE TABLE `hairdb`.`Workday` (
+  `idWorkday` INT NOT NULL AUTO_INCREMENT,
+  `workday` VARCHAR(45) NOT NULL,
+  `startday` DATETIME NOT NULL,
+  `endday` DATETIME NOT NULL,
+  PRIMARY KEY (`idWorkday`));
