@@ -396,13 +396,6 @@ $mysqli->close();
     <link rel="stylesheet" href="css/user.css">
     <link rel="stylesheet" href="css/Stylesheet.css">
     <link rel="stylesheet" href="css/Login.css">
-<<<<<<< HEAD
-=======
-
-    <script type="text/JavaScript" src="js/forms.js"></script> 
-    <script src="js/forgotJavaScript.js"></script>
-
->>>>>>> 213d2d2ee4483a82a35ddc017e58fc1bd20e2003
 
 </head>
 
